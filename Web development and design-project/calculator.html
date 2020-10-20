@@ -1,0 +1,506 @@
+<!Doctype html>
+
+<html>
+
+<head>
+
+<title>Calculator</title>
+
+
+
+<style>
+
+body {
+
+background-color:lightblue;
+
+margin: 0px auto;
+
+}
+
+.calculatorbody{
+
+background: darkslategrey;
+
+border: 5px solid grey;
+
+padding: 10px;
+
+margin-left: 450px;
+
+min-width: 438.4px;
+
+max-width: 438.4px;
+
+}
+
+h1{
+
+text-align: center;
+
+font-size: 40px;
+
+color: #003652;
+
+}
+
+#rezultat{
+
+text-align: right;
+width: 410px;
+height: 35px;
+font-size: 18px;
+border-radius: 5px;
+border: 2px solid grey;
+margin-bottom: 4px;
+
+}
+
+#prikaz1{
+
+color: grey;
+text-align: right;
+width: 410px;
+height: 35px;
+font-size: 15px;
+border-radius: 5px;
+border: 2px solid grey;
+margin-bottom: 4px;
+
+}
+
+button{
+
+background-color: #fff;
+width: 80px;
+height: 60px;
+font-size: 20px;
+border: 5px solid grey;
+
+}
+
+button:hover{
+
+background-color:lightsteelblue;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<h1>
+
+ Calculator</h1>
+
+<div class="calculatorbody">
+
+<form name="lcdform">
+
+<input id="prikaz1" name="lcdsu" type="text" value="" />
+
+<input id="rezultat" name="lcds" type="text" value="0"  />
+
+</form>
+
+<div id="calculatorbutton">
+
+<button id="num1" onclick="numone()">1</button>
+
+<button id="num2" onclick="numtwo()">2</button>
+
+<button id="num3" onclick="numthree()">3</button>
+
+<button id="operationplus" onclick="plus()">+</button>
+
+<button id="minus" onclick="minus()">-</button>
+
+<button id="num4" onclick="numfour()">4</button>
+
+
+<button id="num5" onclick="numfive()">5</button>
+
+<button id="num6" onclick="numsix()">6</button>
+
+<button id="mnozenje" onclick="mnozenje()">*</button>
+
+<button id="korijen" onclick="korijen()">Sqrt()</button>
+
+<button id="num7" onclick="numseven()">7</button>
+
+<button id="num8" onclick="numeight()">8</button>
+
+<button id="num9" onclick="numnine()">9</button>
+
+<button id="clr" onclick="clr()">Clr</button>
+
+<button id="dijeljenje" onclick="dijeljenje()">/</button>
+
+<button id="num00" onclick="numdobuzero()">00</button>
+
+<button id="num0" onclick="numzero()">0</button>
+
+<button id="sumbit" onclick="jednako()">=</button>
+
+
+
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+var prvibroj;
+
+var drugibroj;
+
+var rezultat;
+
+var operations;
+
+function numone(){
+
+if (document.getElementById("rezultat").value == "0" || document.getElementById("rezultat").value == rezultat){
+
+document.getElementById("rezultat").value= "1";
+
+}
+
+else 
+
+{
+
+document.getElementById("rezultat").value = document.getElementById("rezultat").value+ "1";
+
+}
+
+}
+
+function numtwo(){
+
+if (document.getElementById("rezultat").value  == "0" || document.getElementById("rezultat").value == rezultat){
+
+document.getElementById("rezultat").value = "2";
+
+}
+
+else 
+
+{
+
+document.getElementById("rezultat").value  =document.getElementById("rezultat").value  + "2";
+
+}
+
+}
+
+function numthree(){
+
+if (document.getElementById("rezultat").value == "0" || document.getElementById("rezultat").value  == rezultat){
+
+document.getElementById("rezultat").value  = "3";
+
+}
+
+else 
+
+{
+
+document.getElementById("rezultat").value  = document.getElementById("rezultat").value  + "3";
+
+}
+
+}
+
+function numfour(){
+
+if (document.getElementById("rezultat").value == "0" || document.getElementById("rezultat").value  == rezultat){
+
+document.getElementById("rezultat").value  = "4";
+
+}
+
+else 
+
+{
+
+document.getElementById("rezultat").value = document.getElementById("rezultat").value  + "4";
+
+}
+
+}
+
+function numfive(){
+
+if (document.getElementById("rezultat").value == "0" || document.getElementById("rezultat").value == rezultat){
+
+document.getElementById("rezultat").value  = "5";
+
+}
+
+else 
+
+{
+
+document.getElementById("rezultat").value  = document.getElementById("rezultat").value  + "5";
+
+}
+
+}
+
+function numsix(){
+
+if (document.getElementById("rezultat").value  == "0" || document.getElementById("rezultat").value  == rezultat){
+
+document.getElementById("rezultat").value  = "6";
+
+}
+
+else 
+
+{
+
+document.getElementById("rezultat").value  =document.getElementById("rezultat").value + "6";
+
+}
+
+}
+
+function numseven(){
+
+if (document.getElementById("rezultat").value  == "0" || document.getElementById("rezultat").value == rezultat){
+
+document.getElementById("rezultat").value  = "7";
+
+}
+
+else 
+
+{
+
+document.getElementById("rezultat").value  = document.getElementById("rezultat").value  + "7";
+
+}
+
+}
+
+function numeight(){
+
+if (document.getElementById("rezultat").value  == "0"){
+
+document.getElementById("rezultat").value = "8";
+
+}
+
+else if (document.getElementById("rezultat").value  == rezultat)
+
+{
+
+document.getElementById("rezultat").value = "8";
+
+}
+
+else 
+
+{
+
+document.getElementById("rezultat").value = document.getElementById("rezultat").value  + "8";
+
+}
+
+}
+
+function numnine(){
+
+if (document.getElementById("rezultat").value == "0" || document.getElementById("rezultat").value  == rezultat){
+
+document.getElementById("rezultat").value = "9";
+
+}
+
+else 
+
+{
+
+document.getElementById("rezultat").value  =document.getElementById("rezultat").value + "9";
+
+}
+
+}
+
+function numzero(){
+
+if (document.getElementById("rezultat").value  == "0"){
+
+document.getElementById("rezultat").value  = "0";
+
+}
+
+else if (document.getElementById("rezultat").value  == rezultat)
+
+{
+
+document.getElementById("rezultat").value = "0";
+
+}
+
+else 
+
+{
+
+document.getElementById("rezultat").value  = document.getElementById("rezultat").value  + "0";
+
+}
+
+}
+
+function numdobuzero(){
+
+if (document.getElementById("rezultat").value == "0" || document.getElementById("rezultat").value == rezultat){
+
+return;
+
+}
+
+else 
+
+{
+
+document.getElementById("rezultat").value =document.getElementById("rezultat").value  + "00";
+
+}
+
+}
+
+function clr(){
+
+document.getElementById("rezultat").value  = "0";
+
+document.getElementById("prikaz1").value  = "";
+
+return;
+
+}
+
+function plus(){
+
+operation = "+";
+
+prvibroj = parseInt(document.getElementById("rezultat").value );
+
+document.getElementById("rezultat").value = "0";
+
+document.getElementById("prikaz1").value = prvibroj + operation;
+
+
+
+}
+
+function mnozenje(){
+
+operation = "*";
+
+prvibroj = parseInt(document.getElementById("rezultat").value );
+
+document.getElementById("rezultat").value  = "0";
+
+document.getElementById("prikaz1").value = prvibroj + operation;
+
+}
+
+function minus(){
+
+operation = "-";
+
+prvibroj = parseInt(document.getElementById("rezultat").value );
+
+document.getElementById("rezultat").value = "0";
+
+document.getElementById("prikaz1").value  = prvibroj + operation;
+
+}
+
+function dijeljenje(){
+
+operation = "/";
+
+prvibroj = parseInt(document.getElementById("rezultat").value );
+
+document.getElementById("rezultat").value = "0";
+
+document.getElementById("prikaz1").value  = prvibroj + operation;
+
+}
+
+
+
+function jednako(){
+
+drugibroj = parseInt(document.getElementById("rezultat").value );
+
+if (operation == "+")
+
+{
+
+rezultat = prvibroj + drugibroj;
+
+}
+
+else if (operation == "*"){
+
+rezultat = prvibroj * drugibroj;
+
+}
+
+else if (operation == "-"){
+
+rezultat = prvibroj - drugibroj;
+
+}
+
+else if (operation == "/"){
+if(drugibroj==0 || prvibroj==0)
+{
+    alert("Nemoguce dijeliti nulom.")
+return;
+
+}
+rezultat = prvibroj / drugibroj;
+
+}
+
+
+
+document.getElementById("rezultat").value = rezultat;
+
+document.getElementById("prikaz1").value = prvibroj + operation + drugibroj + " = " + rezultat.toString();
+
+return;
+
+}
+
+function korijen(){
+
+prvibroj = document.getElementById("rezultat").value ;
+
+rezultat = Math.sqrt(parseInt(document.getElementById("rezultat").value ));
+
+document.getElementById("rezultat").value  = rezultat;
+
+document.getElementById("prikaz1").value = "sqrt(" + prvibroj + ") = " + rezultat;
+
+}
+
+
+
+</script>
+
+</body>
+
+</html>

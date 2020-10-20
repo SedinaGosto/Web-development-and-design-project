@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MyPage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* Header Title */
+.header {
+    padding: 60px;
+    text-align: center;
+    background:lightblue;
+    color: white;
+}
+
+/* Style the top navigation bar */
+.navbar {
+    display: flex;
+    background-color:lightgray;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    color: royalblue;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Column container */
+.row {  
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* Sidebar/left column */
+.side {
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* Main column */
+.main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+}
+.form
+{
+    margin-top: 110%;
+    color: royalblue;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .row, .navbar {   
+        flex-direction: column;
+    }
+}
+input
+{
+  width: 90%;
+padding-top: 15px;
+border-radius: 10px;
+border: 2px solid grey;
+
+}
+button
+{
+    margin-top: 15px;
+margin-left: 60%;
+padding: 10px;
+border-radius: 10px;
+}
+h4,h6,h2{
+    color:royalblue;
+}
+.error
+{
+    border: 1px solid red;
+}
+
+</style>
+</head>
+<body onload="startTime()">
+<!-- Header -->
+<div class="header">
+  <h1>Curriculum vitae</h1>
+</div>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+  <a href="#">O meni</a>
+  <a href="#">Skolovanje</a>
+  <a href="#">Poslovi</a>
+  <a href="#">Moji radovi</a>
+</div>
+
+<!-- The flexible grid (content) -->
+<div class="row">
+  <div class="side">
+
+      <h2>About Me</h2>
+      <h4>Photo of me:</h4>
+
+      <div class="fakeimg" style="height:200px;">
+        <img src="no-image.png" width="100%">
+      </div>
+
+    <!-- Form-->
+      <div class="form">
+    <fieldset>
+        <legend>Posalji zahtjev</legend>
+        <form>
+            <label for="ime">Unesite naziv firme</label><br>
+                <input type="text" name='ime'id='ime'placeholder="Naziv firme"  onblur=ValidirajIme()><br><br>
+                <div id="errorFirma" style="color:red;"></div>
+
+                <label for="Drzava">Drzava</label><br>
+                <input type="text" name="Drzava" id="Drzava" placeholder="Naziv drzave"  onblur=ValidirajDrzava()><br><br>
+                <div id="errorDrzava" style="color:red;"></div>
+
+                <label for="Drzava">Grad</label><br>
+                <input type="text" name="Grad" id="Grad" placeholder="Naziv grada" onblur="VlidirajNazivGrada()"><br><br>
+                <div id="errorGrad" style="color:red;"></div>
+                
+            <label for="email">Unesite email</label><br>
+                <input type="email" name='email' id="email" onblur="ValidirajEmail()"><br><br>
+                <div id="errorEmail" style="color:red;"></div>
+                
+
+            <label for="telefon">Unesite broj telefona</label><br>
+            <input type="text" name='telefon' id="telefon" onblur="ValidirajTelefon()"><br><br>
+            <div id="errorTelefon" style="color:red;"></div>
+            
+
+            <label for="oblast">Trazena oblast</label><br>
+            <input type="text" name="oblast" id="oblast" onblur="ValidirajOblast()"><br><br>
+            <div id="errorOblast" style="color:red;"></div>
+            
+         <button onclick="return Validiraj()">Posalji zahtjev</button>   
+        </form>
+    </fieldset>
+      </div>
+
+
+  </div>
+
+
+  <div class="main">
+        <p id="Date"></p>
+        <div id="txt"></div>
+        <hr>
+        <h4>Osobne informacije</h4>
+        <p>
+            <image src="lokacija.png" width="2%"></image> Mostar,BiH
+        </p>
+        <p>
+                <image src="phone.jpg" width="2%"></image> ----
+        </p>
+        <p>
+
+                <image src="email.jpg" width="2%"></image> sedinagosto@gmail.com
+        </p>
+        <hr>
+        <br>
+      <hr>
+      <h4>Education</h4>
+      <ul>
+            <li>2012-2016 Srednja medicinska škola Mostar</li>
+            <li>2016-danas Fakultet Informacijskih tehnologija</li>
+        </ul>
+      <hr>
+     <br>
+     <hr>
+     <h4> AREAS OF INTEREST</h4>
+     <ul>
+            <li>Programming and programming languages (C++, C#)</li>
+            <li>Databases</li>
+            <li>Machine learning</li>
+            <li>Artificial intelligence</li>
+        </ul>
+     <hr>
+ <br>
+ <hr>
+ <h4> SOCIAL / FAMILY STATUS</h4>
+ <ul>
+     <li>Nezaposlena</li>
+ </ul>
+ <hr>
+ <br>
+ <hr>
+ <h4> LANGUAGES</h4>
+ <ul>
+     <li>English language – reading and writing</li>
+     <li>Bosnian language – reading and writing</li>
+ </ul>
+ <hr>
+ <br>
+ <hr>
+ <h4>Poslovne vjestine</h4>
+ <ul>
+     <li>Jake vrijednosti pravednosti, jednakosti i poštenja</li>
+     <li>Pozitivan stav u rješavanju problema</li>
+     <li>Dobre timske vještine</li>
+     <li>Sposobnosti za sintetske i globalne poglede na konkretnu situaciju </li>
+     <li>Obavljanje poslova do kraja punim kapacitetom i istim tempom</li>
+     <li>Sposobnost za uspostavu i održavanje dobrih radnih odnosa sa ljudima druge nacionalnosti i
+            kulturne različitosti </li>
+            <li>Odgovornost, samopoštovanje i pouzdanost</li>
+            <li>Sposobnost za preživljavanje i rad u teškim uslovima </li>
+ </ul>
+ <hr>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>&copy;Europska unija, 2012-2018 | http://europass.cedefop.europa.eu </p>
+</div>
+
+
+<!-- Java Script -->
+<script>
+        var d = new Date();
+        document.getElementById("Date").innerHTML = d;
+
+        function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  
+    return i;
+}
+
+//Validacija Imena
+
+  function ValidirajIme()
+    {
+        var imeiprezime=document.getElementById("ime").value;
+        var slovo=imeiprezime.charAt(0);
+        var validno=true;
+       if (imeiprezime == "" || imeiprezime.length<3 || slovo==slovo.toLowerCase())
+       {
+       document.getElementById("errorFirma").innerHTML="Polje nije uneseno pravilno.Pocetno slovo mora biti veliko i naziv mora sadrzavati vise od 3 slova.";
+       document.getElementById("ime").classList.add("error");
+       validno=false;
+       }
+       else
+       {
+       document.getElementById("errorFirma").innerHTML="";
+       document.getElementById("ime").classList.remove("error");
+       validno=true;
+       }
+       
+       
+       return validno;
+      
+    }
+
+
+    //Validacija naziva dryave
+    function ValidirajDrzava()
+    {
+        var nazivdrzave=document.getElementById("Drzava").value;
+        var slovo=nazivdrzave.charAt(0);
+        var validno=true;
+        if ( nazivdrzave=="" || slovo==slovo.toLowerCase())
+       {
+       document.getElementById("errorDrzava").innerHTML="Polje nije uneseno pravilno.Pocetno slovo mora biti veliko.";
+       document.getElementById("Drzava").classList.add("error");
+       validno=false;
+       }
+       else
+       {
+       document.getElementById("errorDrzava").innerHTML="";
+       document.getElementById("Drzava").classList.remove("error");
+       validno=true;
+       }
+       
+       return validno;
+
+    }
+
+
+    //validacija naziva grada
+    function VlidirajNazivGrada()
+    {
+        var nazivgrada=document.getElementById("Grad").value;
+        var slovo=nazivgrada.charAt(0);
+        var validno=true;
+        if (nazivgrada == "" || nazivgrada.length<3 || slovo==slovo.toLowerCase())
+       {
+       document.getElementById("errorGrad").innerHTML="Polje nije uneseno pravilno.Pocetno slovo mora biti veliko.";
+       document.getElementById("Grad").classList.add("error");
+       validno=false;
+       }
+       else
+       {
+       document.getElementById("errorGrad").innerHTML="";
+       document.getElementById("Grad").classList.remove("error");
+       validno=true;
+       }
+       
+       return validno;
+    }
+
+
+
+    //Validacija naziva oblasti
+    function ValidirajOblast()
+    {
+        var oblast=document.getElementById("oblast").value;
+        var validno=true;
+        if (oblast == "" || oblast.length<3 )
+       {
+       document.getElementById("errorOblast").innerHTML="Polje nije uneseno pravilno. Naziv oblasti mora sadrzavati vise pd 3 slova.";
+       document.getElementById("oblast").classList.add("error");
+       validno=false;
+       }
+       else
+       {
+       document.getElementById("errorOblast").innerHTML="";
+       document.getElementById("oblast").classList.remove("error");
+       validno=true;
+       }
+       
+       return validno;
+    }
+
+
+    //Validacija polja email
+    function ValidirajEmail()
+    {
+        var email=document.getElementById("email").value;
+        var validno=true;
+        if (email == "" )
+       {
+       document.getElementById("errorEmail").innerHTML="* Polje je obavezno unijeti *";
+       document.getElementById("email").classList.add("error");
+       validno=false;
+       }
+       else
+       {
+       document.getElementById("errorEmail").innerHTML="";
+       document.getElementById("email").classList.remove("error");
+       validno=true;
+       }
+       
+       return validno;
+    }
+
+    //Validacija polja za unos broja telefona
+    function ValidirajTelefon()
+    {
+        var telefon=document.getElementById("telefon").value;
+        var validno=true;
+        if (telefon == "" )
+       {
+       document.getElementById("errorTelefon").innerHTML="* Polje je obavezno unijeti *";
+       document.getElementById("telefon").classList.add("error");
+       validno=false;
+       }
+       else
+       {
+       document.getElementById("errorTelefon").innerHTML="";
+       document.getElementById("telefon").classList.remove("error");
+       validno=true;
+       }
+       
+       return validno;
+    }
+
+
+    //Validacija kompletne forme.
+    function Validiraj()
+  {
+      
+   var valid=true;
+      if(ValidirajIme() && ValidirajDrzava() && VlidirajNazivGrada() &&  ValidirajEmail() && ValidirajTelefon() && ValidirajOblast())
+      valid=true;
+      else  valid=false;
+      return valid;
+  }
+
+        </script>
+</body>
+</html>
